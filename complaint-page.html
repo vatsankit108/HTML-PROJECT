@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COMPLAINT FORM</title>
+		<script>
+			function validate()
+			{
+				if(document.getElementById('t1').value=="-1")
+			{
+				alert("please provide the type of complaint!");
+				document.getElementById('t1').focus();
+					return false;
+			}
+			if(document.getElementById("t2").value=="")
+			{
+				alert("please provide your address!");
+				document.getElementById('t2').focus();
+					return false;
+			}
+			if(document.getElementById("t3").value=="")
+			{
+				alert("please provide your complete info!");
+				document.getElementById('t1').focus();
+					return false;
+			}
+			if(document.getElementById("t4").value=="")
+			{
+				alert("please provide the brief!");
+				document.getElementById('t4').focus();
+					return false;
+			}
+			}
+		</script>
+	
+</head>
+<body style="background-color: tan;">
+	<h2>Please fill out the details</h2>
+	<form name="myform" onsubmit="return((validate());">
+		<table cellspacing="2" cellpadding="2" border="5">
+			
+			<tr>
+				<td align="right">Type of Complaint</td>
+				<td>
+				<select name="country" id="t1">
+					<option value="-1" selected>[choose yours]</option>
+					<option value="1">Public</option>
+					<option value="2">Private</option>
+					<option value="3">Administrative</option>
+					
+				</select>
+			</td>
+			</tr>
+			<tr>
+				<td align="right">Address</td>
+				<td><input type="text" name="Address" id="t2"></td>
+			</tr>
+			<tr>
+				<td align="right">From how many days</td>
+				<td><input type="text" name="Duration" id="t3"></td>
+			</tr>
+			<tr>
+				<td align="right">Brief about the situation</td>
+				<td><input type="text" name="Brief" id="t4"></td>
+			</tr>
+			<tr>
+				<td align="right">Upload a file</td>
+				<td>
+					<form action="/action_page.php">
+  <label for="file">Select file:</label>
+  <input type="file" id="file" name="file" accept="file/*">
+   <button onclick="validate()">submit</button>
+  </form>
+				</td>
+			</tr>
+
+	</form>
+
+</body>
+</html>
